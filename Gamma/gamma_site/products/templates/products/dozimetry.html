@@ -1,0 +1,17 @@
+{% extends 'products/base.html' %}
+
+{% block content %}
+<h1>Дозиметры</h1>
+{% for item in dozimetry %}
+  <div class="product">
+    <img src="{{ item.image.url }}" alt="{{ item.name }}" class="product-image">
+    <h2>{{ item.name }}</h2>
+    <p><strong>Цена:</strong> ${{ item.price }}</p>
+    <p><strong>Диапазон мощности дозы:</strong> {{ item.dose_power_range }}</p>
+    <p><strong>Диапазон дозы:</strong> {{ item.dose_range }}</p>
+    <p><strong>Диапазон энергий:</strong> {{ item.energy_range }}</p>
+    <p><strong>Погрешность:</strong> {{ item.error }}</p>
+    <p><strong>Описание:</strong> {{ item.description }}</p>
+  </div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>НПП Гамма</title>
+    <link rel="stylesheet" href="{% static 'products/style.css' %}">
+</head>
+<body>
+    <header>
+        <img src="{% static 'products/Лого.png' %}" alt="Логотип" class="logo">
+        <nav>
+            <a href="{% url 'home' %}">Главная</a>
+            <a href="{% url 'company' %}">Компания</a>
+            <a href="{% url 'service' %}">Сервис</a>
+            <a href="{% url 'dozimetry' %}">Дозиметры</a>
+            <a href="{% url 'radiometry' %}">Радиометры</a>
+            <a href="{% url 'news' %}">Новости</a>
+            <a href="{% url 'contact_request' %}">Оставить запрос</a>
+
+
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+    <p>© 2025 ТОО НПП Гамма</p>
+    <p>Телефон: +7 727 318-78-78</p>
+    <p>Email: <a href="mailto:info@npp-gamma.kz">info@npp-gamma.kz</a></p>
+    <p>Адрес: г. Алматы, ул. Наурызбай Батыра, д. 8, БЦ «Коба», офис 202</p>
+</footer>
+
+</body>
+</html>

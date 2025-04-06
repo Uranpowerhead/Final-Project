@@ -1,0 +1,19 @@
+{% extends 'products/base.html' %}
+{% block content %}
+<h1>Новости</h1>
+
+{% for item in news %}
+<div style="border:1px solid #ccc; padding:15px; margin-bottom:15px;">
+    <h2>{{ item.title }}</h2>
+    <p><em>{{ item.created_at|date:"d.m.Y H:i" }}</em></p>
+
+    {% if item.image %}
+    <img src="{{ item.image.url }}" alt="Изображение новости" width="300">
+    {% endif %}
+
+    <p>{{ item.content }}</p>
+</div>
+{% empty %}
+<p>Новостей пока нет.</p>
+{% endfor %}
+{% endblock %}
